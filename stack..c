@@ -2,12 +2,6 @@
 #include <stdio.h>
 #include "stack.h"
 
-typedef struct stack {
-    int v[100];
-    int topo;
-} Stack;
-
-
 Stack* new_stack () {
     Stack* st = (Stack*)malloc(sizeof(Stack));
     st->topo = 0;
