@@ -13,6 +13,7 @@ void interpret_init() {
 
 int isValid() {
     if(s->topo <= 1) {
+        printf ("Não há argumentos suficientes\n");
         return 0;
     }
     return 1;
@@ -33,7 +34,6 @@ void interpret (const char *source) {
 
     if(strcmp(op, "add") == 0 ) {
         if(!isValid()) {
-            printf ("Não há argumentos suficientes\n");
             return;
         }
         int first = stack_pop(s);
@@ -43,7 +43,6 @@ void interpret (const char *source) {
 
     if(strcmp(op, "sub") == 0 ) {
         if(!isValid()) {
-            printf ("Não há argumentos suficientes\n");
             return;
         }
         int first = stack_pop(s);
@@ -53,7 +52,6 @@ void interpret (const char *source) {
 
     if(strcmp(op, "div") == 0 ) {
         if(!isValid()) {
-            printf ("Não há argumentos suficientes\n");
             return;
         }
         int first = stack_pop(s);
@@ -63,7 +61,6 @@ void interpret (const char *source) {
 
     if(strcmp(op, "mul") == 0 ) {
         if(!isValid()) {
-            printf ("Não há argumentos suficientes\n");
             return;
         }
         int first = stack_pop(s);
@@ -71,5 +68,11 @@ void interpret (const char *source) {
         stack_push(s, first * second);
     }
 
-    stack_print(s);
+    if(strcmp(op, "print") == 0 ) {
+        if(s->topo == 0) {
+            printf ("Não há argumentos suficientes na pilha\n");
+            return;
+        }
+        printf("%d foi retirado da pilha\n", stack_pop(s));
+    }
 }
