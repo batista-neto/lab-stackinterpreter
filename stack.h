@@ -3,7 +3,7 @@
 
 typedef struct stack Stack;
 
-Stack* new_stack(int size);
+Stack* new_stack();
 void stack_push(Stack* s, int value);
 int stack_pop (Stack* s);
 void stack_print(Stack* s);
