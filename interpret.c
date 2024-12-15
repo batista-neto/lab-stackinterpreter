@@ -51,5 +51,15 @@ void interpret (const char *source) {
         stack_push(s, first - second);
     }
 
+    if(strcmp(op, "div") == 0 ) {
+        if(!isValid()) {
+            printf ("Não há argumentos suficientes\n");
+            return;
+        }
+        int first = stack_pop(s);
+        int second = stack_pop(s);
+        stack_push(s, first/second);
+    }
+
     stack_print(s);
 }
