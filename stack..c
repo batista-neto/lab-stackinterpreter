@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "stack.h"
 
- typedef struct stack {
+typedef struct stack {
     int v[100];
     int topo;
 } Stack;
