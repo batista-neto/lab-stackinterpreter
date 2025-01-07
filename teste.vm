@@ -1,0 +1,10 @@
+push 30
+push 50
+add
+pop x
+push 65
+push x
+mul
+pop y
+push y
+print
